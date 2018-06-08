@@ -96,7 +96,7 @@
                         <input type="text" class="form-control" name="unique-id" id="unique-id" placeholder="">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="add-btn" class="btn btn-primary">Submit</button>
                 </form>
 
             </div>
@@ -124,6 +124,36 @@
             <div class="container-inner col-md-1"></div>
         </footer>
     </div>
+
+    <!-- JAVASCRIPT to send form data to handler -->
+    <script type="text/javascript">
+        // Question: What does this code do?
+        // listens for the click event on the button with the add-btn id
+        // then when it is clicked a "newCharacter" object is created with the values pulled from the form fields with the targeted ids
+    
+        $("#add-btn").on("click", function(event) {
+          event.preventDefault(); //preventing the form's default behavior because we want to specify something different
+          var newreservation = {
+            name: $("#user-name").val().trim(),
+            phoneNumber: $("#user-phone").val().trim(),
+            email: $("#user-email").val().trim(),
+            uniqueId: $("#unique-id").val().trim()
+          };
+    
+          // Question: What does this code do?
+          // uses the jQuery .post method - btw the syntax is $.post(URL,data,callback); 
+          // to send an HTTP POST request to the server, specified by the url being requested
+          // containing the newCharacter object as the data being sent along with the request
+          // basically throws the newCharacter object to the server at the url route
+          // this data will be in the body of the request
+    
+          $.post("/api/reservations", newreservation)
+            .then(function(data) {
+              console.log("make.html", data);
+              alert("Adding reservation...");
+            }); //this inner function catches the data sent back from the server after it's processed (the then function makes it wait) and logs it as well as popping up the alert
+        });
+      </script>
 
     
 </body>
