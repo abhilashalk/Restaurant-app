@@ -47,6 +47,7 @@ var waitingList = [{
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function (req, res) {
+    console.log("HELLO!");
     res.sendFile(path.join(__dirname, "home.html"));
 });
 
