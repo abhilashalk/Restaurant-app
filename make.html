@@ -30,6 +30,100 @@
 </head>
 
 <body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- spacer -->
+            <div class="container-inner col-md-1"></div>
+    
+            <div class="container-inner col-md-10">
+    
+                <!-- header block -->
+                <header class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron text-center m-3">
+                            <h1 class="text-center">
+                                Hot Restaurant!
+                            </h1>
+    
+                            <hr>
+    
+                            <p class="text-center">
+                                Make a New Reservation
+                            </p>
+                            <p class="text-center">
+                                <a id="view-tables-btn" class="btn btn-primary btn-large m-1" href="#">View Tables</a> 
+                                <a id="make-res-btn" class="btn btn-danger btn-large m-1" href="#">Make Reservation</a>
+                            </p>
+                        </div>
+                    </div>
+                </header>
+                <!-- END header block -->
+    
+            </div>
+    
+            <!-- spacer -->
+            <div class="container-inner col-md-1"></div>
+        </div> 
+        
+        <!-- FORM SECTION -->
+        <div class="row">
+
+            <!-- spacer -->
+            <div class="container-inner col-md-1"></div>
+
+            <!-- FORM -->
+            <div id="view-reservations" class="container-inner col-md-10 p-2">
+                <!-- Reservation Form Here -->
+                <form class="p-2">
+                    <div class="form-group">
+                        <label for="user-name">Name</label>
+                        <input type="text" class="form-control" id="user-name" name="user-name" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-phone">Phone Number</label>
+                        <input type="text" class="form-control" id="user-phone" name="user-phone" placeholder="xxx-xxx-xxxx">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email">Email address</label>
+                        <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unique-id">Unique ID</label>
+                        <input type="text" class="form-control" name="unique-id" id="unique-id" placeholder="">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+
+            <!-- spacer -->
+            <div class="container-inner col-md-1"></div>
+
+        </div>
+        <!-- END FORM SECTION -->
+
+        <footer class="row">
+            <!-- spacer -->
+            <div class="container-inner col-md-1"></div>
+    
+            <!-- main footer -->
+            <div class="col-md-10">
+                <p>
+                    <a href="/api/tables">API Table Link</a> | 
+                    <a href="/api/waitlist">API Wait List</a> | 
+                    <a href="#">GitHub Repo</a>
+                </p>
+            </div>
+    
+            <!-- spacer -->
+            <div class="container-inner col-md-1"></div>
+        </footer>
+    </div>
 
     
 </body>
