@@ -1,5 +1,4 @@
 // Dependencies
-
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
@@ -14,33 +13,35 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+//variables for reservations made
 var reservations = [{
         routeName: "Donald",
         name: "Donald duck",
-        phoneNumber: 777 - 777 - 7777,
+        phoneNumber: 7777777777,
         email: "duck@me.com",
         uniqueId: 7000
     },
     {
         routeName: "Mickey",
         name: "Mickey Mouse",
-        phoneNumber: 555 - 555 - 5555,
+        phoneNumber: 5555555555,
         email: "mickey@me.com",
         uniqueId: 5000
     },
     {
         routeName: "Winnie",
         name: "Winnie Poo",
-        phoneNumber: 333 - 333 - 3333,
+        phoneNumber: 3333333333,
         email: "winnie@me.com",
         uniqueId: 3000
     },
 ];
 
+//Variables for waiting list
 var waitingList = [{
     routeName: "Curious",
     name: "Curious George",
-    phoneNumber: 444 - 444 - 4444,
+    phoneNumber: 4444444444,
     email: "george@me.com",
     uniqueId: 4000
 }]
@@ -63,23 +64,46 @@ app.get("/view", function (req, res) {
 app.get("/", function (req, res) {
     res.send("restaurant page");
 });
+
 // Displays all reservations
 app.get("/api/reservations", function (req, res) {
     return res.json(reservations);
 });
 
-// Displays a single reservation, or returns false
-app.get("/api/reservations/:character", function (req, res) {
-    var newReservation = req.params.reservation;
+// Displays waiting list
+app.get("/api/waitingList", function (req, res) {
+    return res.json(waitingList);
+});
 
-    console.log(newReservation);
+// // Displays a single reservation, or returns false
+// app.get("/api/reservations/:reservation", function (req, res) {
+//     var newReservation = req.params.reservation;
 
-    for (var i = 0; i < reservations.length; i++) {
-        if (newReservation === reservations[i].routeName) {
-            return res.json(reservations[i]);
-        }
-    }
-    return res.json(false);
+//     console.log(newReservation);
+
+//     for (var i = 0; i < reservations.length; i++) {
+//         if (newReservation === reservations[i].routeName) {
+//             return res.json(reservations[i]);
+//         }
+//     }
+//     return res.json(false);
+// });
+
+// Create New reservations - takes in JSON input
+app.post("/api/reservations", function (req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body-parser middleware
+    var newreservation = req.body;
+
+    // Using a RegEx Pattern to remove spaces from newCharacter
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    newreservation.routeName = newreservation.name.replace(/\s+/g, "").toLowerCase();
+
+    console.log(newreservation);
+
+    reservations.push(newreservation);
+
+    res.json(newreservation);
 });
 
 
