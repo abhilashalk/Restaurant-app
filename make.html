@@ -73,8 +73,31 @@
             <div class="container-inner col-md-1"></div>
 
             <!-- FORM -->
-            <div id="view-reservations" class="container-inner col-md-10 p-1">
+            <div id="view-reservations" class="container-inner col-md-10 p-2">
                 <!-- Reservation Form Here -->
+                <form class="p-2">
+                    <div class="form-group">
+                        <label for="user-name">Name</label>
+                        <input type="text" class="form-control" id="user-name" name="user-name" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-phone">Phone Number</label>
+                        <input type="text" class="form-control" id="user-phone" name="user-phone" placeholder="xxx-xxx-xxxx">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email">Email address</label>
+                        <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unique-id">Unique ID</label>
+                        <input type="text" class="form-control" name="unique-id" id="unique-id" placeholder="">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
 
             </div>
 
