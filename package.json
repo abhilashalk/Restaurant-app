@@ -1,0 +1,30 @@
+{
+  "name": "restaurant-app",
+  "version": "1.0.0",
+  "description": "Restaurant app for booking 5 tablesreservations \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D reservations.",
+  "main": "server.js",
+  "scripts": {
+    "test": "table",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhilashalk/Restaurant-app.git"
+  },
+  "keywords": [
+    "restaurant",
+    "table",
+    "reservations"
+  ],
+  "author": "Abi, Emily",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhilashalk/Restaurant-app/issues"
+  },
+  "homepage": "https://github.com/abhilashalk/Restaurant-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  }
+}
